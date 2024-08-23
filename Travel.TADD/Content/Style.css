@@ -1,0 +1,250 @@
+﻿* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+
+.Container {
+    width: 100%;
+    background-color: snow;
+    padding-bottom:60px;
+}
+
+.banner {
+    height: 3px;
+    background-color: rgb(1,148,243);
+    position: fixed;
+    z-index: 1;
+}
+li.format-hello {
+  
+    color: white;
+}
+.MainMenu {
+    height: 100px;
+    width: 100%;
+    background-color: rgb(242,243,243);
+    display: flex;
+    align-items: center;
+    justify-content: left;
+    box-shadow: 18px #676767;
+    position: fixed;
+    z-index: 1;
+    border-top: solid rgb(1,148,243) 3px;
+    -webkit-box-shadow: 0 0 5px 2px #cfcfcf;
+    -moz-box-shadow: 0 0 5px 2px #cfcfcf;
+}
+    .MainMenu a {
+        color: black;
+        margin-left: 25px;
+        font-size: 30px;
+       
+    }
+
+.Footer {
+    padding-bottom: 60px;
+    height: 100%;
+    background-color: black;
+    color: white;
+    float: bottom;
+    width: 100%;
+    display: flex;
+    height: auto;
+}
+
+.Content {
+    padding-top: 100px;
+}
+
+    .Content h1 {
+        margin-top: 60px;
+        margin-left: 30px;
+        font-size: 30px
+    }
+
+    .Content p {
+        font-size: 40px;
+        margin-top: 10px;
+        margin-left: 30px;
+        margin-bottom: 20px;     
+        color: gray;
+        font-size: 20px
+    }
+
+.div {
+    padding-top: 60px;
+    font-size: 40px;
+    text-align: center;
+    margin-bottom: 70px;
+    font-family: url("./Pacifico-Regular.ttf");
+}
+
+    .div h2 {
+        margin-top: 10px;
+    }
+
+    .div h3 {
+        margin-top: 10px;
+        font-size: 20px;
+    }
+
+.carousel-inner img {
+    width: 100%;
+    height: 100%;
+}
+
+.Footer div {
+    margin-left: 125px;
+}
+
+    .Footer div h1 {
+        font-size: 30px;
+    }
+
+    .Footer div h2 {
+        font-size: 20px;
+    }
+
+.Content-login {
+   padding-top:130px;
+}
+
+.login__username input {
+    color: #CCCCCC;
+    background-color: black;
+    text-align: center;
+    height: 30px;
+    width: 300px;
+    color: #FFFFFF;
+    margin-left: 15px;
+}
+
+.login__password input {
+    color: #CCCCCC;
+    background-color: black;
+    text-align: center;
+    height: 30px;
+    width: 300px;
+    color: #FFFFFF;
+    margin-top: 20px;
+    margin-left: 17px;
+}
+
+.login__Repassword input {
+    color: #CCCCCC;
+    background-color: black;
+    text-align: center;
+    height: 30px;
+    width: 300px;
+    color: #FFFFFF;
+    margin-top: 20px;
+}
+.form__field span {
+    color: #FFFFFF;
+    padding: 20px;
+}
+
+.form__field {
+    height: 50px;
+}
+li.format-hello {
+    padding-top: 15px;
+    color: white;
+}
+
+.submit input {
+    width: 100px;
+    margin-left: 280px;
+    margin-top: 20px;
+    color: #CCCCCC;
+    background-color: black;
+    text-align: center;
+}
+.btn-group .button {
+    background-color: rgb(247,249,250);
+    border: none;
+    color: rgb(255,109,112);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.btn-group1 .BTN, .btn-group2 .Btn {
+    background-color: rgb(247,249,250);
+    border: none;
+    color: rgb(255,109,112);
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    cursor: pointer;
+    float: left;
+    margin-left: 30px;
+    margin-bottom: 30px;
+    border-radius: 5px;
+}
+.btn-group1, .btn-group2 {
+    width: auto;
+    height: auto;
+    display: flex;
+}
+    .btn-group .active, .btn-group1 .active, .btn-group2 .active {
+        background-color: rgb(255,109,112);
+        color: white;
+    }
+.Content-tour {
+    align-items: center;
+    font-size: 20px;
+    background-color: #FFFFFF;
+    width: 100%;
+}
+
+.Content-tour-img {
+    width: 200px;
+    height: 350px;
+    text-align: center;
+    border-top-left-radius: 10%;
+    border-top-right-radius: 10%;
+}
+
+    .Content-tour-img img {
+        width: 200px;
+        height: 200px;
+        border-bottom-left-radius: 10%;
+        border-bottom-right-radius: 10%;
+        border-top-left-radius: 10%;
+        border-top-right-radius: 10%;
+    }
+.Content-tour h1 {
+    padding-top: 30px;
+    padding-bottom: 30px;
+    padding-right: 20px;
+}
+
+.Content-tour {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+
+.Content-tour-img h2 {
+    color: black;
+    font-size: 15px;
+    padding-top: 20px;
+}
+.Content-tour-img h4 {
+    color: orange;
+    font-size: 15px;
+
+}
+
+
+
+

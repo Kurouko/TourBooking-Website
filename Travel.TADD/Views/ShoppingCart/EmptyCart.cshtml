@@ -1,0 +1,50 @@
+﻿@{
+    ViewBag.Title = "Cart";
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+}
+
+
+
+<style>
+    .Content {
+        margin-top: 100px;
+        background-color: rgba(216, 218, 218, 0.615);
+        align-items: center;
+    }
+
+    .Container {
+        padding-top: 200px;
+        align-items: center;
+        background-color: rgba(216, 218, 218, 0.615);
+    }
+</style>
+<div class="Container">
+    <div class="content">
+        <h2>Giỏ Hàng</h2>
+        <a href="@Url.Action("Home","Home")">tiếp tục mua hàng</a>
+        <table class="table">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm </th>
+                    <th>Hình sản phẩm</th>
+                    <th>Giá</th>
+                    <th>Số lượng</th>
+                    <th>Thành tiền</th>
+                    <th></th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td colspan="6">
+                        Chưa có sản phẩm nào ...
+                    </td>
+
+                </tr>
+            </tbody>
+        </table>
+
+
+    </div>
+    
+    </div>
+    

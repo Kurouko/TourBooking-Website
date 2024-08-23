@@ -1,0 +1,65 @@
+﻿@model Travel.TADD.Models.AdminUser
+
+@{
+    ViewBag.Title = "Đăng Nhập";
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+}
+<link href="~/Content/Style.css" rel="stylesheet" />
+<style>
+    .lg {
+        width: 1400px;
+        height: 800px;
+        background-color: white;
+        text-align: center;
+        padding-top: 100px;
+        border-radius: 5px;
+        margin: auto;
+        -webkit-box-shadow: 0 0 5px 2px #cfcfcf;
+        -moz-box-shadow: 0 0 5px 2px #cfcfcf;
+        box-shadow: 0 0 5px 2px #cfcfcf;
+        text-align: left;
+    }
+    .lg div{
+       transform:translateX(600px) translateY(100px);
+    }
+    .Content {
+        margin-top: 100px;
+        background-color: rgba(216, 218, 218, 0.615);
+        align-items: center;
+    }
+    .Container {
+        padding-top: 200px;
+        align-items: center;
+        background-color: rgba(216, 218, 218, 0.615);
+       
+    }
+    .field-validation-error {
+        color: red;
+    }
+    
+    </style>
+
+<div class="Container">
+    <div class="content">
+        <div class="lg">
+            <h1 style="transform: translateX(600px) translateY(60px); width: 400px; color: rgb(1,148,243); ">Đăng nhập</h1>
+            <div style=" width:400px;">
+                @using (Html.BeginForm("loginAccount", "LoginUser"))
+                {
+                    @Html.AntiForgeryToken()
+                    <p >@Html.LabelFor(model => model.NameUser)</p>
+                    <p>@Html.TextBoxFor(model => model.NameUser, new { style = "field-validation-error" })</p>
+                    <p>@Html.ValidationMessageFor(model => model.NameUser)</p>
+                    <p>@Html.LabelFor(model => model.PasswordUser)</p>
+                    <p>@Html.PasswordFor(model => model.PasswordUser)</p>
+                    <p>@Html.ValidationMessageFor(model => model.PasswordUser)</p>
+                    if (ViewBag.ErrorInfo != null)
+                    {
+                        <p style="color:red;">@ViewBag.ErrorInfo</p>
+                    }
+                    <input style="background-color: rgb(1,148,243); margin-top: 20px; transform: translateX(85px); color: white; border: none; border-radius: 5px; width:100px; " type="submit" value="Đăng nhập" />
+                }
+            </div>
+        </div>
+    </div>
+</div>

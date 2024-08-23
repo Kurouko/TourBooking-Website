@@ -1,0 +1,43 @@
+﻿@model Travel.TADD.Models.Product
+
+@{
+    ViewBag.Title = "Create";
+}
+<script src="~/Scripts/ChangeImage.js"></script>
+<h2>Thêm Sản Phẩm Mới</h2>
+@using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "mutipart/from-data" }))
+{
+<table class="table-bordered">
+
+    <tr>
+        <td>@Html.LabelFor(model => model.NamePro)</td>
+        <td>@Html.EditorFor(model => model.NamePro)</td>
+        <p> @Html.ValidationMessageFor(model => model.NamePro)</p>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Price)</td>
+        <td>@Html.EditorFor(model => model.Price)</td>
+        <p> @Html.ValidationMessageFor(model => model.Price)</p>
+    </tr>
+    <tr>
+        <td>@Html.LabelFor(model => model.Category)</td>
+        <td>
+            @Html.DropDownListFor(model => model.Category, (SelectList)ViewBag.listCategory)
+        </td>
+    </tr>
+
+    <tr>
+        <td>@Html.LabelFor(model => model.ImagePro)</td>
+        <td class="imgBox" id="imgBox" style="width:500px; height:500px;background-color:black; align-items:center; display:flex;">
+            <input type="file" accept="Image/" name="ImagePro" id="file" style="display: none;margin-left:250px; " onchange="loadFile(event)">
+            <label for="file" style="color:white;">upload</label>
+        </td>
+        <script>
+            var imgBox = document.getElementById("imgBox");
+            var loadFile = function (event) {
+                imgBox.style.backgroundImage = "url(" + URL.createObjectURL(event.target.files[0]) + ")";
+            }
+        </script>
+        </tr>
+</table>
+}

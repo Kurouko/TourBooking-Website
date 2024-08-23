@@ -1,0 +1,871 @@
+﻿@model IEnumerable<Travel.TADD.Models.Product>
+@{
+    ViewBag.Title = "Home";
+    Layout = "~/Views/Shared/LayoutPage1.cshtml";
+}
+<link href="~/Content/Style.css" rel="stylesheet" />
+<head>
+    <title>Travel.TADD</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet"
+          type="text/css"
+          href="~/Content/SliderSlick.css">
+    <link rel="StyleSheet" href="./bootstrap.css">
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.6.0/dist/jquery.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.1/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/js/bootstrap.bundle.min.js"></script>
+</head>
+<body>
+    <div class="Content">
+        <div id="demo" class="carousel slide" data-ride="carousel">
+            <ul class="carousel-indicators">
+                <li data-target="#demo" data-slide-to="0" class="active"></li>
+                <li data-target="#demo" data-slide-to="1"></li>
+                <li data-target="#demo" data-slide-to="2"></li>
+                <li data-target="#demo" data-slide-to="3"></li>
+            </ul>
+            <div class="carousel-inner">    
+                <div class="carousel-item active">
+                    <img src="~/Content/Images/beautiful-view-of-the-mountains-and-the-church-on-giau-pass-picjumbo-com.png" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/canal-grande-with-gondolas-in-venice-picjumbo-com-2.png" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/morning-view-of-dolomites-mountains-italy-picjumbo-com.png" width="1100" height="500">
+                </div>
+                <div class="carousel-item">
+                    <img src="~/Content/Images/vernazza-cinque-terre-italy-picjumbo-com.png" width="1100" height="500">
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#demo" data-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </a>
+            <a class="carousel-control-next" href="#demo" data-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </a>
+        </div>
+
+        <h1>Việt Nam đệ nhất trứ danh</h1>
+        <p>Đi đến những nơi ấn tượng nhất của Việt Nam</p>
+        <div class="btn-group">
+            <button class="button active" onclick="DaNang()">Đà Nẵng</button>
+            <button class="button" onclick="NhaTrang()">Nha Trang</button>
+            <button class="button" onclick="DaLat()">Đà Lạt</button>
+            <button class="button" onclick="PhuQuoc()">Phú Quốc</button>
+            <button class="button" onclick="TPHCM()">TP.HCM</button>
+            <button class="button" onclick="HaNoi()">Hà Nội</button>
+
+        </div>
+
+
+
+
+        <div class="container-fluid" style="padding-left:30px; display:block;" id="DaNang">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID == 10 || pro.ProductID == 11 || pro.ProductID == 13 || pro.ProductID == 14 || pro.ProductID == 17)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+
+            </div>
+        </div>
+
+
+        <div class="container-fluid" style="padding-left:30px; display:none;" id="NhaTrang">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID == 15 || pro.ProductID == 18 || pro.ProductID == 19 || pro.ProductID == 20)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="container-fluid" style="padding-left:30px; display:none;" id="DaLat">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID <= 24 && pro.ProductID > 20)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+                    }
+                }
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left:30px; display:none;" id="PhuQuoc">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID <= 30 && pro.ProductID > 24)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+            </div>
+        </div>
+
+        <div class="container-fluid" style="padding-left:30px; display:none;" id="TPHCM">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID > 30 && pro.ProductID <= 34)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left:30px; display:none;" id="HaNoi">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID <= 36 && pro.ProductID >34)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+            </div>
+        </div>
+        <h1>Không thể không đến</h1>
+        <p>Đi cùng người thân vừa vui vừa thích</p>
+        <div class="btn-group1">
+            <button class="BTN active" onclick="CVGT()">Công viên giải trí</button>
+            <button class="BTN" onclick="DDNT()">Địa điểm nổi tiếng</button>
+            <button class="BTN" onclick="TDTN()">Thiên đường thiên nhiên</button>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: block;" id="CVGT">
+            <div class="row">
+                @foreach (var pro in Model)
+                {
+                    if (pro.ProductID == 39 || pro.ProductID == 18 || pro.ProductID == 10 || pro.ProductID == 40 || pro.ProductID == 26 || pro.ProductID == 41)
+                    {
+                        <a href="/Detail/Index/@pro.ProductID">
+                            <div class="col-lg-2 col-md-2 col-sm-4">
+                                <div style=" width: 200px; height: 350px; text-align: center; border-top-left-radius: 10%; border-top-right-radius: 10%;">
+                                    <img style=" width: 200px; height: 200px; border-bottom-left-radius: 10%; border-bottom-right-radius: 10%; border-top-left-radius: 10%; border-top-right-radius: 10%;" src="@Url.Content(pro.ImagePro)" />
+                                    <div style="transform:translateX(-14px)">
+                                        <p style="color: black; font-size: 20px; padding-top: 20px; font-weight:bold">@Html.DisplayFor(model => pro.NamePro)</p>
+                                        <p style="color: orange; font-size: 15px; font-weight: bold ">@Html.DisplayFor(Model => pro.Price) VND</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </a>
+
+                    }
+                }
+
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="DDNT">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000639648830/Vincom%2520Center%2520Landmark%252081%2520SkyView%2520Observation%2520Deck%2520Tickets-84983c70-f34e-4fca-b923-d6a118dc05a7.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé đài quan sát SkyView tại Vincom Center Landmark 81</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 250.000</h3>
+                                    <h4>VND 220.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001540807078/Han%2520River%2520by%2520Night%2520on%2520My%2520Xuan%2520Cruise-06485c60-a512-4228-b985-1b283b92771a.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Du ngoạn sông Hàn về đêm trên du thuyền Mỹ Xuân</h2>
+                                    <h4>VND 77.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/7582971487059/Lotte%2520Observation%2520Deck%2520Centre%2520in%2520Hanoi%2520Admission%2520Tickets-0fd60efd-86ab-4b7b-ac72-69c1cf49a5c0.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé đài quan sát Lotte Center Hà Nội</h2>
+                                    <h4>VND 119.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="TDTN">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000684220699/Vinpearl%2520Safari%2520Phu%2520Quoc%2520Tickets-40745601-6a72-445c-b4db-9376519a0fef.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé Vinpearl Safari Phú Quốc</h2>
+                                    <h4>VND 490.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2001455035254/ZooDoo%2520Dalat%2520Tickets%2520-%2520Easy%2520Access-3050af23-f10c-4bd5-90c3-2298ba63d721.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé ZooDoo Đà Lạt vào cửa dễ dàng</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 50.000</h3>
+                                    <h4>VND 45.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <h1>Vi vu quốc tế, giải trí thích mê</h1>
+        <p>Các điểm tham quan giải trí quốc tế được yêu thích</p>
+        <div class="btn-group2">
+            <button class="Btn active" onclick="NhatBan()">Nhật Bản</button>
+            <button class="Btn" onclick="HanQuoc()">Hàn Quốc</button>
+            <button class="Btn" onclick="Singapore()">Singapore</button>
+            <button class="Btn" onclick="ThaiLan()">Thái Lan</button>
+            <button class="Btn" onclick="DaiLoan()">Đài Loan</button>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: block;" id="NhatBan">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001514451736/LEGOLAND%25C2%25AE%2520Discovery%2520Centre%2520Tokyo-5f8ad33a-61d7-4889-92c0-a5d344b18544.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>LEGOLAND® Discovery Centre Tokyo</h2>
+                                    <h4>VND 359.101</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000200127455/Huis%2520Ten%2520Bosch%2520Theme%2520Park-9ab45d76-a14f-41b4-99e5-4920b960147b.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vào cửa Huis Ten Bosch</h2>
+                                    <h4>VND 917.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000874119489/Osaka%2520Umeda%2520HEP%2520FIVE%2520Ferris%2520wheel-682ba558-691d-4db5-80a3-7980edf5e703.png?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé HEP FIVE Ferris wheel ở Umeda, Osaka</h2>
+                                    <h4>VND 110.570</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/8632008985356/teamLab%2520Borderless%2520Tokyo%2520Digital%2520Art%2520Museum-1777379f-d4e1-4bdd-84cb-4f743ff84e39.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>teamLab Borderless Tokyo Digital Art Museum</h2>
+                                    <h4>VND 184.172</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001190503753/Glass%2520Bottom%2520Boat%2520Cruise%2520from%2520Naha%2520Okinawa-ebeab185-5d69-4668-a0ba-0191c23927ba.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Đi thuyền đáy kính ở Naha</h2>
+                                    <h4>VND 220.973</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="HanQuoc">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000123282089/N%2520Seoul%2520Tower-c64de6f5-4635-4667-ba68-7aa9f44df3cf.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vào cửa tháp N Seoul</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 149.051</h3>
+                                    \                                    <h4>VND 111.800</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000468991515/Coex%2520Aquarium-a9548f4c-9d34-4c33-b6e1-9c93d346aa2b.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé tham quan Thủy cung Coex</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 465.975</h3>
+                                    <h4>VND 336.100</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/6411555539895/Seoul%2520Sky%2520Observatory-40ef5ac8-c2b4-498f-8750-cded7b9acd01.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Seoul Sky Observatory</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 503.280</h3>
+                                    <h4>VND 445.700</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001099003215/Daegu%2520E-World-9591fd38-e088-4413-83f5-bee68c2cf0d2.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vui chơi tại Daegu E-World</h2>
+                                    <h4>VND 615.194</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="Singapore">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001514451736/LEGOLAND%25C2%25AE%2520Discovery%2520Centre%2520Tokyo-5f8ad33a-61d7-4889-92c0-a5d344b18544.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>LEGOLAND® Discovery Centre Tokyo</h2>
+                                    <h4>VND 359.101</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000200127455/Huis%2520Ten%2520Bosch%2520Theme%2520Park-9ab45d76-a14f-41b4-99e5-4920b960147b.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vào cửa Huis Ten Bosch</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 920.859</h3>
+                                    <h4>VND 917.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="ThaiLan">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001514451736/LEGOLAND%25C2%25AE%2520Discovery%2520Centre%2520Tokyo-5f8ad33a-61d7-4889-92c0-a5d344b18544.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>LEGOLAND® Discovery Centre Tokyo</h2>
+                                    <h4>VND 359.101</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000200127455/Huis%2520Ten%2520Bosch%2520Theme%2520Park-9ab45d76-a14f-41b4-99e5-4920b960147b.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vào cửa Huis Ten Bosch</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 920.859</h3>
+                                    <h4>VND 917.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" style="padding-left: 30px; padding-top: 60px; display: none;" id="DaiLoan">
+            <div class="row">
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1001514451736/LEGOLAND%25C2%25AE%2520Discovery%2520Centre%2520Tokyo-5f8ad33a-61d7-4889-92c0-a5d344b18544.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>LEGOLAND® Discovery Centre Tokyo</h2>
+                                    <h4>VND 359.101</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/1000200127455/Huis%2520Ten%2520Bosch%2520Theme%2520Park-9ab45d76-a14f-41b4-99e5-4920b960147b.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Vé vào cửa Huis Ten Bosch</h2>
+                                    <h3 style="font-size: 15px; color: gray; text-decoration-line: line-through;">VND 920.859</h3>
+                                    <h4>VND 917.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-2 col-md-2 col-sm-4">
+                    <div id="Content-tour">
+                        <div class="tour">
+                            <a href="TPHCM.html" title="BookTour">
+                                <div class="Content-tour-img">
+                                    <img src="https://ik.imagekit.io/tvlk/xpe-asset/AyJ40ZAo1DOyPyKLZ9c3RGQHTP2oT4ZXW+QmPVVkFQiXFSv42UaHGzSmaSzQ8DO5QIbWPZuF+VkYVRk6gh-Vg4ECbfuQRQ4pHjWJ5Rmbtkk=/2000908873656/Sun%2520World%2520Fansipan%2520Legend%2520Cable%2520Car%2520in%2520Sapa-9d190aca-cdd9-4b07-9d9a-6eebce447026.jpeg?_src=imagekit&tr=c-at_max,h-456,q-60,w-256"> </img>
+                                    <h2>Sun World Fansipan Legend tại Sapa</h2>
+                                    <h4>VND 620.000</h4>
+                                </div>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-lg-3 col-md-3 col-sm-5">
+                    <div class="div">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008495760-d92160ea2b56fc1128cbdff93aa43774.png?tr=h-150,q-75,w-150"> </img>
+                        <h2>Vấn đề chỗ ở</h2>
+                        <h3 style="font-size:20px; ;">
+                            Với TADD vấn đề chỗ ở</br>
+                            luôn được giải quyết ổn thỏa,</br>
+                            đảm bảo trãi nghiệm tốt nhất</br>
+                            cho khách hàng
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-5">
+                    <div class="div">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008504598-6c1d5675c41e47eee0b27c59c07a2bbd.png?tr=h-150,q-75,w-150"> </img>
+                        <h2>Giá rẻ mỗi ngày</h2>
+                        <h3 style="font-size:20px; ;">
+                            Giá bạn thấy là giá bạn</br>
+                            trả! Dễ dàng so sánh khi</br>
+                            không cần phải trả thêm</br>
+                            chi phí ẩn!
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-3 col-sm-5">
+                    <div class="div">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008514239-c1d0a51538cd02053c9b1a6c567fe5b5.png?tr=h-150,q-75,w-150"> </img>
+                        <h2>Phương thức thanh<br> toán an toàn và <br> linh hoạt</h2>
+                        <h3 style="font-size:20px; ;">
+                            Giao dịch trực tuyến an</br>
+                            toàn với nhiều lựa chọn</br>
+                            đảm bảo trãi nghiệm tốt nhất</br>
+                            như thanh toán tại cửa</br>
+                            hàng tiện lợi, chuyển</br>
+                            khoản ngân hàng, thẻ tín </br>
+                            dụng đến Internet </br>
+                            Banking. Không tính phí </br>
+                            giao dịch.
+                        </h3>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="div">
+                        <img src="https://ik.imagekit.io/tvlk/image/imageResource/2017/05/17/1495008521046-3cee046bb3ddb863398300f89d83c0f9.png?tr=h-150,q-75,w-150"> </img>
+                        <h2>Hỗ trợ khách hàng<br>24/7</h2>
+                        <h3>
+                            khách hàng luôn sẵn</br>
+                            sàng giúp đỡ bạn trong</br>
+                            từng bước của quá trình</br>
+                            đặt vé
+                        </h3>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script type="text/javascript">
+
+        $('.button').on('click', function () {
+            $('.button').removeClass('active');
+            $(this).addClass('active');
+        });
+
+        $('.BTN').on('click', function () {
+            $('.BTN').removeClass('active');
+            $(this).addClass('active');
+        });
+        $('.Btn').on('click', function () {
+            $('.Btn').removeClass('active');
+            $(this).addClass('active');
+        });
+    </script>
+    <script type="text/javascript">
+        function DaNang() {
+            document.getElementById("DaNang").style.display = "block";
+            document.getElementById("NhaTrang").style.display = "none";
+            document.getElementById("DaLat").style.display = "none";
+            document.getElementById("PhuQuoc").style.display = "none";
+            document.getElementById("TPHCM").style.display = "none";
+            document.getElementById("HaNoi").style.display = "none";
+        };
+        function NhaTrang() {
+            document.getElementById("DaNang").style.display = "none";
+            document.getElementById("NhaTrang").style.display = "block";
+            document.getElementById("DaLat").style.display = "none";
+            document.getElementById("PhuQuoc").style.display = "none";
+            document.getElementById("TPHCM").style.display = "none";
+            document.getElementById("HaNoi").style.display = "none";
+        };
+        function DaLat() {
+            document.getElementById("DaNang").style.display = "none";
+            document.getElementById("NhaTrang").style.display = "none";
+            document.getElementById("DaLat").style.display = "block";
+            document.getElementById("PhuQuoc").style.display = "none";
+            document.getElementById("TPHCM").style.display = "none";
+            document.getElementById("HaNoi").style.display = "none";
+        };
+        function PhuQuoc() {
+            document.getElementById("DaNang").style.display = "none";
+            document.getElementById("NhaTrang").style.display = "none";
+            document.getElementById("DaLat").style.display = "none";
+            document.getElementById("PhuQuoc").style.display = "block";
+            document.getElementById("TPHCM").style.display = "none";
+            document.getElementById("HaNoi").style.display = "none";
+        };
+        function TPHCM() {
+            document.getElementById("DaNang").style.display = "none";
+            document.getElementById("NhaTrang").style.display = "none";
+            document.getElementById("DaLat").style.display = "none";
+            document.getElementById("PhuQuoc").style.display = "none";
+            document.getElementById("TPHCM").style.display = "block";
+            document.getElementById("HaNoi").style.display = "none";
+        };
+        function HaNoi() {
+            document.getElementById("DaNang").style.display = "none";
+            document.getElementById("NhaTrang").style.display = "none";
+            document.getElementById("DaLat").style.display = "none";
+            document.getElementById("PhuQuoc").style.display = "none";
+            document.getElementById("TPHCM").style.display = "none";
+            document.getElementById("HaNoi").style.display = "block";
+        };
+        function CVGT() {
+            document.getElementById("CVGT").style.display = "block";
+            document.getElementById("DDNT").style.display = "none";
+            document.getElementById("TDTN").style.display = "none";
+        };
+        function DDNT() {
+            document.getElementById("CVGT").style.display = "none";
+            document.getElementById("DDNT").style.display = "block";
+            document.getElementById("TDTN").style.display = "none";
+        };
+        function TDTN() {
+            document.getElementById("CVGT").style.display = "none";
+            document.getElementById("DDNT").style.display = "none";
+            document.getElementById("TDTN").style.display = "block";
+        };
+        function NhatBan() {
+            document.getElementById("NhatBan").style.display = "block";
+            document.getElementById("Hanquoc").style.display = "none";
+            document.getElementById("Singapore").style.display = "none";
+            document.getElementById("ThaiLan").style.display = "none";
+            document.getElementById("DaiLoan").style.display = "none";
+        };
+        function HanQuoc() {
+            document.getElementById("NhatBan").style.display = "none";
+            document.getElementById("Hanquoc").style.display = "block";
+            document.getElementById("Singapore").style.display = "none";
+            document.getElementById("ThaiLan").style.display = "none";
+            document.getElementById("DaiLoan").style.display = "none";
+        };
+        function Singapore() {
+            document.getElementById("NhatBan").style.display = "none";
+            document.getElementById("Hanquoc").style.display = "none";
+            document.getElementById("Singapore").style.display = "block";
+            document.getElementById("ThaiLan").style.display = "none";
+            document.getElementById("DaiLoan").style.display = "none";
+        };
+        function ThaiLan() {
+            document.getElementById("NhatBan").style.display = "none";
+            document.getElementById("Hanquoc").style.display = "none";
+            document.getElementById("Singapore").style.display = "none";
+            document.getElementById("ThaiLan").style.display = "block";
+            document.getElementById("DaiLoan").style.display = "none";
+        };
+        function DaiLoan() {
+            document.getElementById("NhatBan").style.display = "none";
+            document.getElementById("Hanquoc").style.display = "none";
+            document.getElementById("Singapore").style.display = "none";
+            document.getElementById("ThaiLan").style.display = "none";
+            document.getElementById("DaiLoan").style.display = "block";
+        };
+    </script>
+</body>
+
